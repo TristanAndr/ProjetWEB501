@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digitalResume</title>
+    <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="container"> <!--Oublie du debut-->
+        <div class="row">
+        </div>
+    </div>
+
+    <div class="hide-on-med-only hide-on-large-only"> <!--Responsive affiche que le small-->
+        <div class="mockup_iphone"> <!--definit le container du mockup-->
+            <div class="screen"> <!--Determine la taille de l'ecran qui sert de container-->
+                <img src="images/bg.jpg" id="bg" alt="bg" class="responsive-img"> <!--Fond d'ecran de l'appareil-->
+                <h2 class="white-text" id="hour"></h2> <!--Affiche l'heure-->
+                <img src="images/cam.png" id="cam" alt="cam" class="responsive-img">
+                <img src="images/flash.png" id="flash" alt="flash" class="responsive-img">
+                <a href="home.html">    <!--Barre qui fait revenir a l'accueil-->
+                    <img src="images/barre.png" id="barre" alt="barre" class="responsive-img">
+                </a>
+            </div>
+            <img src="images/iphone2.png" alt="iphone" class="responsive-img">  <!--affiche le mockup-->
+        </div>
+    </div>
+
+    <div class="hide-on-small-only hide-on-large-only">
+        <div class="mockup_ipad">
+            <div class="screen">
+                <img src="images/bgipad.png" alt="bg" class="responsive-img">
+                <h2 class="white-text" id="hour2"></h2>
+                <img src="images/cam.png" id="cam2" alt="cam" class="responsive-img">
+                <img src="images/flash.png" id="flash2" alt="flash" class="responsive-img">
+                <a href="home.html">
+                    <img src="images/barre.png" id="barre2" alt="barre" class="responsive-img">
+                </a>
+            </div>
+            <img src="images/ipad2.png" alt="ipad" class="responsive-img">
+        </div>
+    </div>
+
+    <div class="hide-on-small-only hide-on-med-only">
+        <div class="mockup_mac">
+            <div class="screen">
+                <img src="images/bgmac.png" alt="bg" class="responsive-img">
+                <h2 class="white-text" id="hour3"></h2>
+                <img src="images/avatarmac.png" id="avatar" alt="avatar" class="responsive-img">
+                <a href="home.html">
+                    <img src="images/unlockmac.png" id="unlockmac" alt="unlockmac" class="responsive-img">
+                </a>
+            </div>
+            <img src="images/mac.png" alt="mac" class="responsive-img">
+        </div>
+    </div>
+
+</body>
+
+</html>

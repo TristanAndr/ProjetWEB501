@@ -1,0 +1,879 @@
+@font-face {
+    font-family: 'SFProDisplay-Semibold';
+    src: url('fonts/SFProDisplay-Semibold.woff2') format('woff2'),
+        url('fonts/SFProDisplay-Semibold.woff') format('woff'),
+        url('fonts/SFProDisplay-Semibold.otf') format('opentype');
+}
+
+/*
+z-index : 
+1=bg
+2=screen/mockup
+3=Affichage
+4+=besoin d'etre au premier plan 
+*/
+
+@media screen and (max-width: 600px) {
+
+    .mockup_iphone {            
+        position: absolute;     /*permet d'empiler les objets*/
+        height: 90vh;
+        width: 100vw;
+        display: flex;          /*centre au milieu de l'ecran*/
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mockup_iphone img {        /*définit la taille du mokcup*/
+        width: 275px;
+        z-index: 2;
+    }
+
+    .mockup_iphone .screen {    /*définit la taille de l'ecran*/
+        position: absolute;
+        width: 240px;
+        height: 485px;
+    }
+
+    #bg {                       /*définit la taille du bg*/
+        width: 242px;
+        height: 490px;
+    }
+
+    #bg20 {                      /*définit la taille du bg flou*/
+        filter: blur(20px);
+        width: 240px;
+        height: 490px;
+    }
+
+    .cache {                    /*la fameuse classe cache qui permet de cacher le début l'apparition de l'animation */
+        overflow: hidden;       /*tout le contenu du cache qui sort de celui ci est masqué*/
+    }
+
+    #cam {                      /*definit l'emplacement et la taille de la cam*/
+        position: absolute;
+        width: 20%;
+        top: 420px;
+        left: 170px;
+    }
+
+    .carousel {                 /*definit l'emplacement et la taille du caroussel*/
+        position: absolute;
+        top: 30px;
+        height: 250px !important;
+    }
+
+    .carousel .indicators .indicator-item {     /*change la couleur des indicateurs*/
+        background-color: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .carousel .indicators .indicator-item.active {      /*change la couleur des indicateurs actifs*/
+        background-color: rgb(8, 8, 8) !important;
+    }
+
+
+    #flash {                    /*definit l'emplacement et la taille du flash*/
+        position: absolute;
+        width: 20%;
+        top: 420px;
+        left: 20px;
+    }
+
+    #barre {                    /*definit l'emplacement et la taille de la barre*/
+        position: absolute;
+        width: 50%;
+        top: 440px;
+        left: 65px;
+        z-index: 3;
+    }
+
+    #dock {                     /*definit l'emplacement et la taille du dock*/
+        position: absolute;
+        width: 90%;
+        height: 60px;
+        top: 410px;
+        left: 15px;
+        opacity: 0.4;
+    }
+
+    #croix10 {                    /*definit l'emplacement et la taille de la croix*/
+        position: absolute;
+        width: 8%;
+        top: 5px;
+        left: 188px;
+        z-index: 10;
+    }
+
+    #croix11 {                    /*definit l'emplacement et la taille de la croix*/
+        position: absolute;
+        width: 8%;
+        top: 5px;
+        left: 188px;
+        z-index: 10;
+    }
+
+    #croix12 {                    /*definit l'emplacement et la taille de la croix*/
+        position: absolute;
+        width: 8%;
+        top: 5px;
+        left: 188px;
+        z-index: 10;
+    }
+
+    #croix13 {                    /*definit l'emplacement et la taille de la croix*/
+        position: absolute;
+        width: 8%;
+        top: 5px;
+        left: 188px;
+        z-index: 10;
+    }
+
+    #croix14 {                    /*definit l'emplacement et la taille de la croix*/
+        position: absolute;
+        width: 8%;
+        top: 5px;
+        left: 188px;
+        z-index: 10;
+    }
+
+    #profil {                   /*definit l'emplacement et la taille de l'icone profil*/
+        position: absolute;
+        width: 19%;
+        top: 418px;
+        left: 30px;
+        z-index: 3;
+        border-radius: 10px;
+    }
+
+    #portfolio {                /*definit l'emplacement et la taille de l'icone portfolio*/
+        position: absolute;
+        width: 21%;
+        top: 416px;
+        left: 98.5px;
+        z-index: 3;
+    }
+
+    #contact {                  /*definit l'emplacement et la taille de l'icone contact*/
+        position: absolute;
+        width: 19%;
+        top: 418px;
+        left: 172px;
+        z-index: 3;
+        border-radius: 10px;
+    }
+
+    .screen #hour {             /*definit l'emplacement et la taille de l'heure*/
+        position: absolute;
+        left: 50px;
+        top: 40px;
+        font-family: 'SFProDisplay-Semibold';
+        font-weight: 600;
+        font-size: 60px;
+        z-index: 2;
+    }
+
+    .titre {                    /*met les titres souhaités en gras*/
+        font-weight: bold;
+    }
+
+    .carre {                    /*definit l'apparence de la fenetre 1*/
+        scrollbar-width: none;  /*cache la scrollbar*/
+        position: absolute;
+        top: 30px;
+        left: 16.5px;
+        width: 210px;
+        height: 430px;
+        z-index: 3;
+
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);        /*filtre graphique, en gros floute derriere le carre*/
+        border-radius: 17px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /*x,y,flou*/
+    }
+
+    .carre div {                /*centre les texte des div*/
+        width: 100%;
+        text-align: center;
+    }
+
+    .carre2 {
+        overflow-y: auto;       /*permet de scroll*/
+        scrollbar-width: none;  /*cache la scrollbar*/
+        position: absolute;
+        top: 0px;
+        width: 210px;
+        height: 430px;
+        z-index: 2;
+
+        background: rgba(30, 30, 30, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1), 0 8px 15px rgba(0, 0, 0, 0.3); /*ombre interne et externe*/
+        color: #eee;
+    }
+
+    #off {                      /*definit la taille et l'apparence du bouton off*/
+        position: absolute;
+        left: 235px;
+        top: 110px;
+        width: 85px;
+        height: 70px;
+        z-index: 4;
+        opacity: 0;             /*cache l'image pour laisser apparaitre le bouton off*/
+    }
+
+    #git {                      /*definit la taille et l'apparence de l'icone git*/
+        position: absolute;
+        width: 20%;
+        top: 370px;
+        left: 83px;
+    }
+
+    #linkedin {                 /*definit la taille et l'apparence de l'icone linkedin*/
+        position: absolute;         
+        width: 15%;
+        left: 90px;
+    }
+
+    .arrow {                    /*apparence initiale de la fleche*/
+        font-size: 0.5em;       /*taille par rapport au texte*/
+        margin-left: 5px;       /*espace entre le texte et la fleche*/
+        display: inline-block;  /* nécessaire pour transform sinon marche pas (fixe sur la meme ligne que le texte et devient manipulable*/
+        transition: transform 0.3s ease;
+    }
+
+    .develop.open .arrow {      /*quand la fleche est dans l'etat open*/
+        transform: rotate(-90deg);
+    }
+
+
+
+
+
+    .slide {                    /*animation slide de la fenetre1*/
+        transform: translateY(100%);        /*decale de sa taille vers le bas*/
+        animation: slideUp 0.15s ease forwards;
+    }
+
+    @keyframes slideUp {
+        to {
+            transform: translateY(0);       /*reviens a sa position initiale*/
+        }
+    }
+
+
+
+    .openjs {                   /*etat initial de l'animation d'ouverture de la fenetre 2*/
+        opacity: 0;             /*il es transparent*/
+        transform: scale(0.5);  /*la moitié de sa taille*/
+        transition: transform 0.15s ease;
+    }
+
+    .openjs.animate {           /*animation souhaité open*/
+        opacity: 1;             /*redevient opaque*/
+        transform: scale(1);    /*prend sa taille normale*/
+    }
+
+    .openjs.close {             /*reprend sa forme initiale*/
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .actionner_open {           /*definit les textes qui permettent de lancer l'animation open*/
+        cursor: pointer;
+        position: relative;     /*Sans ca tout les titres ne sont pas cliquables */
+        z-index: 3;
+    }
+
+
+
+    .contenu {                  /*definit l'etat initial de l'animation de deroule du contenu de la fenetre2*/
+        max-height: 0;          /*on reduit la taille du container de text (entre le texte la et celui d'apres)*/
+        overflow: hidden;       /*cache le texte*/
+        transition: max-height 0.4s ease;
+    }
+
+    .contenu.open {             /*reviens a la taille initiale*/
+        max-height: 500px;
+    }
+
+    .develop {                  /*definit les texte qui permettent de lancer l'animation deroule*/
+        cursor: pointer;
+    }
+
+
+}
+
+
+
+
+
+
+@media screen and (min-width:600px) and (max-width: 992px) {
+
+    .mockup_ipad {
+        position: absolute;
+        height: 90vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mockup_ipad img {
+        width: 500px;
+        z-index: 1;
+    }
+
+    .mockup_ipad .screen {
+        position: absolute;
+        width: 470px;
+        height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .screen #hour2 {
+        position: absolute;
+        left: 123px;
+        top: 70px;
+        font-family: 'SFProDisplay-Semibold';
+        font-weight: 600;
+        font-size: 90px;
+        z-index: 3;
+    }
+
+    #flash2 {
+        position: absolute;
+        width: 13%;
+        top: 550px;
+        left: 40px;
+    }
+
+    #cam2 {
+        position: absolute;
+        width: 13%;
+        top: 550px;
+        left: 370px;
+    }
+
+    #barre2 {
+        position: absolute;
+        width: 50%;
+        top: 550px;
+        left: 115px;
+        z-index: 3;
+    }
+
+    #profil2 {
+        position: absolute;
+        width: 11%;
+        top: 555px;
+        left: 90px;
+        z-index: 3;
+        border-radius: 10px;
+    }
+
+    #portfolio2 {
+        position: absolute;
+        width: 12%;
+        top: 553px;
+        left: 205px;
+        z-index: 3;
+    }
+
+    #contact2 {
+        position: absolute;
+        width: 11%;
+        top: 555px;
+        left: 320px;
+        z-index: 3;
+        border-radius: 10px;
+    }
+
+    #dock2 {
+        position: absolute;
+        width: 90%;
+        height: 70px;
+        top: 545px;
+        left: 23px;
+        opacity: 0.4;
+    }
+
+    #bg21 {
+        filter: blur(20px);
+        width: 470px;
+        height: 650px;
+    }
+
+    .carre {
+        overflow-y: auto;
+        scrollbar-width: none;
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        width: 420px;
+        height: 590px;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 3px black;
+        z-index: 3;
+
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border-radius: 17px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .carre div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .carre2 {
+        overflow-y: auto;
+        scrollbar-width: none;
+        position: absolute;
+        top: 0px;
+        width: 420px;
+        height: 590px;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 3px black;
+        z-index: 2;
+
+        background: rgba(30, 30, 30, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1), 0 8px 15px rgba(0, 0, 0, 0.3);
+        color: #eee;
+    }
+
+    .cache {
+        overflow: visible;
+    }
+
+    .cache.animate {
+        animation: slideIn 0.5s forwards;
+        overflow: hidden;
+    }
+
+    .titre {
+        font-weight: bold;
+    }
+
+    #croix20 {
+        position: absolute;
+        width: 5%;
+        top: 10px;
+        left: 388px;
+        z-index: 10;
+    }
+
+    #croix21 {
+        position: absolute;
+        width: 5%;
+        top: 10px;
+        left: 388px;
+        z-index: 10;
+    }
+
+    #croix22 {
+        position: absolute;
+        width: 5%;
+        top: 10px;
+        left: 388px;
+        z-index: 10;
+    }
+
+    .carousel {
+        position: absolute;
+        top: 110px;
+        height: 250px !important;
+    }
+
+    .carousel .indicators .indicator-item {
+        background-color: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .carousel .indicators .indicator-item.active {
+        background-color: rgb(8, 8, 8) !important;
+    }
+
+    #off2 {
+        position: absolute;
+        left: 470px;
+        top: 35px;
+        transform: rotate(90deg);
+        width: 70px;
+        height: 70px;
+        z-index: 4;
+        opacity: 0;
+    }
+
+    #git2 {
+        position: absolute;
+        width: 15%;
+        top: 470px;
+        left: 177px;
+    }
+
+    #linkedin2 {
+        position: absolute;
+        width: 8%;
+        left: 192px;
+    }
+
+    .cache {
+        overflow: hidden;
+    }
+
+
+
+
+
+
+
+    .slide {
+        transform: translateY(100%);
+        animation: slideUp 0.15s ease forwards;
+    }
+
+    @keyframes slideUp {
+        to {
+            transform: translateY(0);
+        }
+    }
+
+
+
+    .openjs {
+        opacity: 0;
+        transform: scale(0.5);
+        transition: transform 0.15s ease;
+    }
+
+    .openjs.animate2 {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .openjs.close2 {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    .actionner_open2 {
+        cursor: pointer;
+        position: relative;
+        /*Alors la magique */
+        z-index: 3;
+    }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+@media screen and (min-width: 992px) {
+
+    .mockup_mac {
+        position: absolute;
+        height: 90vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mockup_mac img {
+        width: 900px;
+        z-index: 1;
+    }
+
+    .mockup_mac .screen {
+        position: absolute;
+        width: 700px;
+        height: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .screen #hour3 {
+        position: absolute;
+        left: 223px;
+        top: 40px;
+        font-family: 'SFProDisplay-Semibold';
+        font-weight: 600;
+        font-size: 100px;
+        z-index: 3;
+    }
+
+    #unlockmac {
+        position: absolute;
+        width: 6%;
+        top: 270px;
+        left: 330px;
+        z-index: 3;
+    }
+
+    #avatar {
+        position: absolute;
+        width: 10%;
+        top: 200px;
+        left: 315px;
+        z-index: 3;
+    }
+
+    #profil3 {
+        position: absolute;
+        width: 7%;
+        top: 391px;
+        left: 245px;
+        z-index: 3;
+        border-radius: 10px;
+    }
+
+    #portfolio3 {
+        position: absolute;
+        width: 8%;
+        top: 388px;
+        left: 320px;
+        z-index: 3;
+    }
+
+    #contact3 {
+        position: absolute;
+        width: 7%;
+        top: 391px;
+        left: 400px;
+        z-index: 3;
+        border-radius: 10px;
+    }
+
+    #dock3 {
+        position: absolute;
+        width: 40%;
+        height: 60px;
+        top: 385px;
+        left: 207px;
+        opacity: 0.4;
+    }
+
+    #bg3 {
+        filter: blur(0px);
+        width: 700px;
+        height: 450px;
+    }
+
+    .carre {
+        overflow-y: auto;
+        scrollbar-width: none;
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        width: 650px;
+        height: 410px;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 3px black;
+        z-index: 3;
+
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border-radius: 17px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .carre div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .carre2 {
+        overflow-y: auto;
+        scrollbar-width: none;
+        position: absolute;
+        top: 0px;
+        width: 650px;
+        height: 410px;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 3px black;
+        z-index: 2;
+
+        background: rgba(30, 30, 30, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1), 0 8px 15px rgba(0, 0, 0, 0.3);
+        color: #eee;
+    }
+
+    .cache {
+        overflow: visible;
+    }
+
+    .cache.animate {
+        animation: slideIn 0.5s forwards;
+        overflow: hidden;
+    }
+
+    .titre {
+        font-weight: bold;
+    }
+
+    #croix30 {
+        position: absolute;
+        width: 4%;
+        top: 5px;
+        left: 618px;
+        z-index: 5;
+    }
+
+    #croix31 {
+        position: absolute;
+        width: 4%;
+        top: 5px;
+        left: 618px;
+        z-index: 5;
+    }
+
+    #croix32 {
+        position: absolute;
+        width: 4%;
+        top: 5px;
+        left: 618px;
+        z-index: 5;
+    }
+
+    #croix4 {
+        position: absolute;
+        width: 4%;
+        top: 5px;
+        left: 618px;
+        z-index: 4;
+    }
+
+    .carousel {
+        position: absolute;
+        top: 30px;
+        height: 250px !important;
+    }
+
+    .carousel .indicators .indicator-item {
+        background-color: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .carousel .indicators .indicator-item.active {
+        background-color: rgb(8, 8, 8) !important;
+    }
+
+    #off3 {
+        position: absolute;
+        left: 15px;
+        top: 10px;
+        width: 3%;
+        z-index: 4;
+    }
+
+    #git3 {
+        position: absolute;
+        width: 6%;
+        top: 360px;
+        left: 305px;
+    }
+
+    #linkedin3 {
+        position: absolute;
+        width: 3%;
+        left: 315px;
+        top: 389px;
+    }
+
+    .cache {
+        overflow: hidden;
+    }
+
+
+
+
+
+
+    /* flèche par défaut */
+    .arrow {
+        font-size: 0.5em;
+        /* plus petite que le texte */
+        margin-left: 5px;
+        display: inline-block;
+        /* nécessaire pour transform */
+        transition: transform 0.3s ease;
+    }
+
+    /* quand le titre a la classe open */
+    .develop.open .arrow {
+        transform: rotate(-90deg);
+    }
+
+
+
+
+    .slide {
+        transform: translateY(100%);
+        animation: slideUp 0.15s ease forwards;
+    }
+
+    @keyframes slideUp {
+        to {
+            transform: translateY(0);
+        }
+    }
+
+
+
+    .openjs {
+        opacity: 0;
+        transform: scale(0.5);
+        transition: transform 0.15s ease;
+    }
+
+    .openjs.animate3 {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .openjs.close3 {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    .actionner_open3 {
+        cursor: pointer;
+        position: relative;
+        /*Alors la magique */
+        z-index: 3;
+    }
+
+
+
+    .contenu {
+        max-height: 0;
+        overflow: hidden;
+        /*enleve le texte*/
+        transition: max-height 0.4s ease;
+    }
+
+    .contenu.open3 {
+        max-height: 500px;
+    }
+
+    .develop3 {
+        cursor: pointer;
+    }
+
+}

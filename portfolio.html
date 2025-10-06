@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>digitalResume</title>
+  <script src="script.js" defer></script>
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+  <div class="container"> <!--Oublie du debut-->
+    <div class="row">
+    </div>
+  </div>
+  <div class="hide-on-med-only hide-on-large-only"> <!--Responsive affiche que le small-->
+    <div class="mockup_iphone"> <!--definit le container du mockup-->
+      <div class="screen cache">
+        <!--Determine la taille de l'ecran qui sert de container et definit le "cache" qui cachera l'arrivée de l'animation slide-->
+        <img src="images/bg.jpg" id="bg20" alt="bg" class="responsive-img"> <!--Fond d'ecran de l'appareil-->
+        <a href="home.html"> <!--Barre qui fait revenir a l'accueil-->
+          <img src="images/barre_noire.png" id="barre" alt="barre" class="responsive-img">
+        </a>
+        <div class="carre slide "> <!--Affiche la fenetre avec l'animation slide-->
+          <br>
+          <h4 class="titre center-align">Portfolio</h4>
+          <div class="carousel"> <!--Affiche le caroussel portfolio-->
+            <a class="carousel-item" href="#one!">Un pendu en python<img src="images/pendu.png" alt="pendu"></a>
+            <a class="carousel-item" href="#two!">Mise en page WEB<img src="images/mep.png" alt="mep"></a>
+            <a class="carousel-item" href="#three!">Utilisation des flexboxs<img src="images/flexbox.png"
+                alt="flexbox"></a>
+            <a class="carousel-item" href="#three!">Utilisation de Materialize<img src="images/materialize.png"
+                alt="materialize"></a>
+          </div>
+          <a href="https://github.com/TristanAndr" target="_blank"> <!--Lien vers git-->
+            <img src="images/git.png" id="git" alt="git" class="responsive-img">
+          </a>
+        </div>
+      </div>
+      <img src="images/iphone2.png" alt="iphone" class="responsive-img"> <!--affiche le mockup-->
+    </div>
+  </div>
+
+
+  <div class="hide-on-small-only hide-on-large-only">
+    <div class="mockup_ipad">
+      <div class="screen cache">
+        <img src="images/bgipad.png" id="bg21" alt="bg" class="responsive-img">
+        <a href="home.html">
+          <img src="images/barre.png" id="barre2" alt="barre" class="responsive-img">
+        </a>
+        <div class="carre slide ">
+          <br>
+          <h4 class="titre center-align">Portfolio</h4>
+          <div class="carousel">
+            <a class="carousel-item" href="#one!">Un pendu en python<img src="images/pendu.png" alt="pendu"></a>
+            <a class="carousel-item" href="#two!">Mise en page WEB<img src="images/mep.png" alt="mep"></a> <a
+              class="carousel-item" href="#three!">Utilisation des flexboxs<img src="images/flexbox.png"
+                alt="flexbox"></a>
+            <a class="carousel-item" href="#three!">Utilisation de Materialize<img src="images/materialize.png"
+                alt="materialize"></a>
+          </div>
+          <a href="https://github.com/TristanAndr" target="_blank">
+            <img src="images/git.png" id="git2" alt="git" class="responsive-img">
+          </a>
+        </div>
+      </div>
+      <img src="images/ipad2.png" alt="ipad" class="responsive-img">
+    </div>
+  </div>
+
+
+  <div class="hide-on-med-only hide-on-small-only">
+    <div class="mockup_mac">
+      <div class="screen cache">
+        <img src="images/bgmac.png" alt="bg" class="responsive-img">
+        <div class="carre slide ">
+          <a href="home.html">
+            <img src="images/croix.png" id="croix4" alt="croix" class="responsive-img">
+          </a>
+          <br>
+          <h4 class="titre center-align">Portfolio</h4>
+          <div class="carousel">
+            <a class="carousel-item" href="#one!">Un pendu en python<img src="images/pendu.png" alt="pendu"></a>
+            <a class="carousel-item" href="#two!">Mise en page WEB<img src="images/mep.png" alt="mep"></a>
+            <a class="carousel-item" href="#three!">Utilisation des flexboxs<img src="images/flexbox.png" alt="flexbox"></a>
+            <a class="carousel-item" href="#three!">Utilisation de Materialize<img src="images/materialize.png" alt="materialize"></a>
+          </div>
+          <a href="https://github.com/TristanAndr" target="_blank">
+            <img src="images/git.png" id="git3" alt="git" class="responsive-img">
+          </a>
+        </div>
+      </div>
+      <img src="images/mac.png" alt="mac" class="responsive-img">
+    </div>
+  </div>
+</body>
+
+</html>
