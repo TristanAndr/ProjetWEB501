@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Site d'Annonces d'Emploi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mini Site d'Annonces d'Emploi</h1>
+  </header>
+
+  <main>
+    <label for="filter">Filtrer par type de contrat:</label>
+    <select id="filter">
+      <option value="all">Tous</option>
+      <option value="CDI">CDI</option>
+      <option value="CDD">CDD</option>
+      <option value="Stage">Stage</option>
+    </select>
+
+    <div id="jobs-container">
+      <!-- Les annonces seront ajoutées ici via JS -->
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Mini Site d'Emploi
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
