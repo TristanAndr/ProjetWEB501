@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'SFProDisplay';
-    src: url('SFProDisplay-Semibold.woff2') format('woff2'),
-        url('SFProDisplay-Semibold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
