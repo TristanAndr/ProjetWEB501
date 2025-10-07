@@ -1,0 +1,106 @@
+body{
+  background-color: #FAEBE8;
+}
+
+header{
+  position: fixed;
+  width: 100vw;
+}
+
+header div{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+header nav{
+  display: flex;
+  justify-content: space-between;
+  background-color: #F9E6D8;
+  height: 100px;
+  align-items: center;
+}
+
+nav a{
+  font-size: larger;
+  padding: 10px;
+  border-radius: 30px;
+  font-family: 'Lora';
+  text-decoration: none;
+  color: black;
+}
+
+nav img:hover{
+  transform: scale(1.5);
+}
+
+nav a:hover{
+  transform: scale(1.05);
+}
+
+nav img{
+  width: 50px;
+  margin: 20px;
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+  padding-top: 240px;
+  width: 5000px;
+}
+
+.box{
+  border: solid red;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  margin: 50px;
+  flex-direction: column;
+}
+
+.box p{
+  display: flex;
+  justify-content: center;
+}
+.box:hover{
+  box-shadow: 10px 5px 5px darkred;
+}
+
+input{
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: large;
+}
+
+footer{
+  display: flex;
+}
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #F9E6D8;
+  width: 100vw;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+
+footer a{
+  font-size: larger;
+  padding: 10px;
+  font-family: 'Lora';
+  text-decoration: none;
+  color: black;
+}
+
+footer a:hover{
+  transform: scale(1.05);
+}
