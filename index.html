@@ -142,6 +142,42 @@
             </p>
             <button class="btn_more ring" id="btn9">Learn more</button>
         </div>
+        <h1>Liste des personnes</h1>
+        <div id="liste-personnes">Chargement...</div>
+
+        <script>
+          // Appel à ton API Node.js
+          fetch("http://localhost:3000/personnes")
+            .then(res => res.json())
+            .then(data => {
+              const container = document.getElementById("liste-personnes");
+              container.innerHTML = ""; // vide le "Chargement..."
+
+              if (data.length === 0) {
+                container.innerHTML = "<p>Aucune personne trouvée.</p>";
+                return;
+              }
+
+              // Parcours des données reçues
+              data.forEach(p => {
+                const div = document.createElement("div");
+                div.className = "personne";
+
+                // Affiche dynamiquement les colonnes existantes
+                div.innerHTML = `
+                  <h3>${p.nom} ${p.prenom}</h3>
+                  <p><strong>ID :</strong> ${p.id}</p>
+                  ${p.age ? `<p><strong>Âge :</strong> ${p.age}</p>` : ""}
+                `;
+                container.appendChild(div);
+              });
+            })
+            .catch(err => {
+              console.error("Erreur lors du chargement :", err);
+              document.getElementById("liste-personnes").innerHTML =
+                "<p style='color:red;'>Erreur de connexion à l’API</p>";
+            });
+        </script>
     </main>
     <footer>
         <a href="">Nos réseaux</a>
@@ -149,28 +185,6 @@
         <a href="">A propos</a>
     </footer>
     <script src="script.js"></script>
-    <script>
-      fetch("http://localhost:3000/personnes")
-        .then(res => res.json())
-        .then(data => {
-          console.log("Données reçues :", data);
-          const main = document.querySelector("main");
-          main.innerHTML = ""; // vide le contenu actuel
-
-          data.forEach(p => {
-            const box = document.createElement("div");
-            box.className = "box";
-            box.innerHTML = `
-              <h3>${p.nom}</h3>
-              <p>${p.prenom}</p>
-              <button class="btn_more">Learn more</button>
-            `;
-            main.appendChild(box);
-          });
-        })
-        .catch(err => console.error("Erreur :", err));
-    </script>
-
 </body>
  
 </html>
