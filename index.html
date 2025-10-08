@@ -143,23 +143,37 @@
             <button class="btn_more ring" id="btn9">Learn more</button>
         </div>
     </main>
-    <h1>Liste des personnes</h1>
-  <ul id="personnes"></ul>
+    <h1 style="text-align:center;">Liste des personnes</h1>
+    <table id="personnes">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-  <script>
-    // Appelle ton API Node.js
-    fetch("https://ton-serveur-node.onrender.com/personnes")
-      .then(response => response.json())
-      .then(data => {
-        const list = document.getElementById("personnes");
-        data.forEach(personne => {
-          const li = document.createElement("li");
-          li.textContent = `${personne.nom} ${personne.prenom}`;
-          list.appendChild(li);
-        });
-      })
-      .catch(err => console.error("Erreur :", err));
-  </script>
+    <script>
+      fetch("http://localhost:3000/personnes")
+        .then(res => res.json())
+        .then(data => {
+          const tbody = document.querySelector("#personnes tbody");
+          data.forEach(p => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td>${p.id}</td>
+              <td>${p.nom}</td>
+              <td>${p.prenom}</td>
+              <td>${p.email ?? ""}</td>
+            `;
+            tbody.appendChild(row);
+          });
+        })
+        .catch(err => console.error("Erreur :", err));
+    </script>
     <footer>
         <a href="">Nos réseaux</a>
         <a href="">Nous Contacter</a>
