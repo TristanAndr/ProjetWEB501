@@ -1,64 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
- 
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Liste des personnes</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 60%;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
 </head>
- 
 <body>
-    <header>
-        <nav>
-            <a href="index.html"><img src="mallette.png"></a>
-            <a href="">Candidature spontanée</a>
-            <a href="">Mes recherches d'emplois</a>
-            <a href="">Mes canditatures</a>
-            <a href=""><img src="utilisateur.png"></a>
-        </nav>
-        <div>
-            <input type="text" id="recherche" name="recherche">
-        </div>
-    </header>
-    <h1>Liste des personnes</h1>
-    <table id="personnes">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+  <h1 style="text-align:center;">Liste des personnes</h1>
+  <table id="personnes">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 
-    <script>
-      fetch("https://tristanandr.github.io/ProjetWEB501/personnes")
-        .then(res => res.json())
-        .then(data => {
-          const tbody = document.querySelector("#personnes tbody");
-          data.forEach(p => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-              <td>${p.id}</td>
-              <td>${p.nom}</td>
-              <td>${p.prenom}</td>
-              <td>${p.email ?? ""}</td>
-            `;
-            tbody.appendChild(row);
-          });
-        })
-        .catch(err => console.error("Erreur :", err));
-    </script>
-    <footer>
-        <a href="">Nos réseaux</a>
-        <a href="">Nous Contacter</a>
-        <a href="">A propos</a>
-    </footer>
-    <script src="script.js"></script>
+  <script>
+    fetch("https://tristanandr.github.io/ProjetWEB501/personnes")
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.querySelector("#personnes tbody");
+        data.forEach(p => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${p.id}</td>
+            <td>${p.nom}</td>
+            <td>${p.prenom}</td>
+            <td>${p.email ?? ""}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      })
+      .catch(err => console.error("Erreur :", err));
+  </script>
 </body>
- 
 </html>
