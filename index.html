@@ -32,7 +32,7 @@
  
         <div class="box" id="box2">
             <h3></h3>
-            <p class="resume">
+            <p id="resume">
             </p>
             <button class="btn_more ring" id="btn2">Learn more</button>
         </div>
@@ -134,11 +134,11 @@
               const boxes = document.querySelectorAll(".box");
               boxes.forEach((box, index) => {
                 if (index < data.length) { 
-                  const projet = data[index];
+                  const personne = data[index];
 
-                  box.querySelector("h3").textContent = `${projet.Nom} ${projet.Prénom}`;
-                  box.querySelector("p").textContent = `ID: ${projet.id}`;
-                  box.querySelector("p").textContent += ` Téléphone : ${projet.Téléphone}`;
+                  box.querySelector("h3").textContent = `${personne.Nom} ${personne.Prénom}`;
+                  box.querySelector("p").textContent = `ID: ${personne.id}`;
+                  box.querySelector("p").textContent += ` Téléphone : ${personne.Téléphone}`;
                 }
               });
             })
