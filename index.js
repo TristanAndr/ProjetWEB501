@@ -20,7 +20,7 @@ connection.connect(err => {
   console.log("✅ Connecté à la base de données !");
 });
 
-app.get("/projet", (req, res) => {
+app.get("/personnes", (req, res) => {
   connection.query("SELECT * FROM Personne", (err, rows) => {
     if (err) {
       console.error(err);
@@ -31,5 +31,5 @@ app.get("/projet", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("🚀 API disponible sur http://10.18.207.148:3000/projet");
+  console.log("🚀 API disponible sur http://10.18.207.148:3000/personnes");
 });

@@ -128,7 +128,7 @@
         <div id="liste-personnes">Chargement...</div>
 
         <script>
-          fetch("http://10.18.207.148:3000/projet")
+          fetch("http://10.18.207.148:3000/personnes")
             .then(res => res.json())
             .then(data => {
               const boxes = document.querySelectorAll(".box");

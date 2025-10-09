@@ -12,10 +12,13 @@ btn.addEventListener("click", () => {
 });
  
 //--------------------------------------------------------------ANIMATION BOX-----------------------------------------------------------------------
+let target_box = null;
+let open = false;
 const btn_more = document.querySelectorAll('.btn_more');
  
 btn_more.forEach(btn => {
     btn.addEventListener("click", (e) => {
+        e.stopPropagation();
         if (btn.id === e.target.id) {
             const flous = document.querySelectorAll('.box');
             flous.forEach(flou => {
@@ -27,17 +30,16 @@ btn_more.forEach(btn => {
             let tailleEcranY = window.innerHeight;
             let midX = tailleEcranX / 2;
             let midY = tailleEcranY / 2;
-            let moveX = (midX - coord_btn.x - 50) / 2.2;
+            let moveX = (midX - coord_btn.x - 50) / 1.8;
             let moveY = (midY - coord_btn.y) / 100;
  
             let target = e.target.parentNode.id;
             let boxx = document.getElementById(target);
  
-            boxx.style.transform = `scale(2.2) rotateY(180deg) translate(${-moveX}px,${-moveY}px)`;
+            boxx.style.transform = `scale(1.8) rotateY(180deg) translate(${-moveX}px,${-moveY}px)`;
             boxx.style.background = "white"
             boxx.style.zIndex = "1";
-            boxx.style.overflow = "scroll"
-            boxx.style.scrollbarWidth = "hidden"
+            boxx.style.overflowY = "scroll"
             boxx.classList.remove('blur');
  
  
@@ -59,18 +61,22 @@ btn_more.forEach(btn => {
                 text.style.transform = 'rotateY(180deg)';
             });
             btn.remove();
-            //btn.style.opacity = 0;
  
-            
- 
+            target_box = boxx;
+            open=true;
         }
     })
 });
 //--------------------------------------------------------------ANIMATION RETOUR BOX-----------------------------------------------------------------------
  
  
- 
- 
+const header = document.querySelector('header')
+document.addEventListener("click", (e) => {
+    if( (e.target.id != target_box.id && open===true) && (e.target.parentNode.id != target_box.id && open===true) ){
+        open = false;
+        location.reload();
+    }
+})
  
  
 //----------------------------------------------------------LIMITE CARACTERE RESUME----------------------------------------------------------------
