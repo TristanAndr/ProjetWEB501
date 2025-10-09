@@ -24,19 +24,15 @@
     </header>
     <main>
         <div class="box" id="box1">
-            <h3>REQUIN</h3>
+            <h3></h3>
             <p id="resume">
             </p>
             <button class="btn_more ring face" id="btn1">Learn more</button>
         </div>
  
         <div class="box" id="box2">
-            <h3>REQUIN</h3>
-            <p class="resume"> requin requin requin requin requin requin requin requin
-                requin requin requin requin requin requin requin requin
-                requin requin requin requin requin requin requin requin
-                requin requin requin requin requin requin requin requin
-                requin requin requin requin requin requin requin...
+            <h3></h3>
+            <p class="resume">
             </p>
             <button class="btn_more ring" id="btn2">Learn more</button>
         </div>
@@ -132,17 +128,17 @@
         <div id="liste-personnes">Chargement...</div>
 
         <script>
-          fetch("http://localhost:3000/personnes")
+          fetch("http://10.18.207.148:3000/projet")
             .then(res => res.json())
             .then(data => {
               const boxes = document.querySelectorAll(".box");
               boxes.forEach((box, index) => {
                 if (index < data.length) { 
-                  const personne = data[index];
+                  const projet = data[index];
 
-                  box.querySelector("h3").textContent = `${personne.Nom} ${personne.Prénom}`;
-                  box.querySelector("p").textContent = `ID: ${personne.id}`;
-                  box.querySelector("p").textContent += ` Téléphone : ${personne.Téléphone}`;
+                  box.querySelector("h3").textContent = `${projet.Nom} ${projet.Prénom}`;
+                  box.querySelector("p").textContent = `ID: ${projet.id}`;
+                  box.querySelector("p").textContent += ` Téléphone : ${projet.Téléphone}`;
                 }
               });
             })
