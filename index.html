@@ -23,42 +23,132 @@
         </div>
     </header>
     <main>
+        <div class="box" id="box1">
+            <h3>REQUIN</h3>
+            <p id="resume">
+            </p>
+            <button class="btn_more ring face" id="btn1">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box2">
+            <h3>REQUIN</h3>
+            <p class="resume"> requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn2">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box3">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn3">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box4">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn4">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box5">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn5">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box6">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn6">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box6">
+            <h3>REQUIN</h3>
+            <p>requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn6">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box7">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn7">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box8">
+            <h3>REQUIN</h3>
+            <p class="resume"> requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn8">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box9">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn9">Learn more</button>
+        </div>
         <h1>Liste des personnes</h1>
         <div id="liste-personnes">Chargement...</div>
 
         <script>
-          // Appel à ton API Node.js
           fetch("http://localhost:3000/personnes")
             .then(res => res.json())
             .then(data => {
-              const container = document.getElementById("liste-personnes");
-              container.innerHTML = ""; // vide le "Chargement..."
+              const boxes = document.querySelectorAll(".box");
+              boxes.forEach((box, index) => {
+                if (index < data.length) { 
+                  const personne = data[index];
 
-              if (data.length === 0) {
-                container.innerHTML = "<p>Aucune personne trouvée.</p>";
-                return;
-              }
-
-              // Parcours des données reçues
-              data.forEach(p => {
-                const div = document.createElement("div");
-                div.className = "personne";
-
-                // Affiche dynamiquement les colonnes existantes
-                div.innerHTML = `
-                  <h3>${p.Nom} ${p.Prénom}</h3>
-                  <p><strong>ID :</strong> ${p.id}</p>
-                  ${p.Sexe ? `<p><strong>Âge :</strong> ${p.Téléphone}</p>` : ""}
-                `;
-                container.appendChild(div);
+                  box.querySelector("h3").textContent = `${personne.Nom} ${personne.Prénom}`;
+                  box.querySelector("p").textContent = `ID: ${personne.id}`;
+                  box.querySelector("p").textContent += ` Téléphone : ${personne.Téléphone}`;
+                }
               });
             })
-            .catch(err => {
-              console.error("Erreur lors du chargement :", err);
-              document.getElementById("liste-personnes").innerHTML =
-                "<p style='color:red;'>Erreur de connexion à l’API</p>";
-            });
+            .catch(err => console.error("Erreur :", err));
         </script>
+
     </main>
     <footer>
         <a href="">Nos réseaux</a>
