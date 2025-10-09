@@ -1,109 +1,154 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+ 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-  <title>Liste des personnes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+    <title>Document</title>
 </head>
-
+ 
 <body>
-  <header>
-    <nav>
-      <a href="index.html"><img src="mallette.png" alt="Accueil"></a>
-      <a href="#">Candidature spontanée</a>
-      <a href="#">Mes recherches d'emplois</a>
-      <a href="#">Mes candidatures</a>
-      <a href="#"><img src="utilisateur.png" alt="Profil"></a>
-    </nav>
-    <div class="search-bar">
-      <input type="text" name="recherche" placeholder="Rechercher...">
-    </div>
-  </header>
+    <header>
+        <nav>
+            <a href="index.html"><img src="mallette.png"></a>
+            <a href="">Candidature spontanée</a>
+            <a href="">Mes recherches d'emplois</a>
+            <a href="">Mes canditatures</a>
+            <a href=""><img src="utilisateur.png"></a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" name="recherche">
+        </div>
+    </header>
+    <main>
+        <div class="box" id="box1">
+            <h3></h3>
+            <p id="resume">
+            </p>
+            <button class="btn_more ring face" id="btn1">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box2">
+            <h3></h3>
+            <p id="resume">
+            </p>
+            <button class="btn_more ring" id="btn2">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box3">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn3">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box4">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn4">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box5">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn5">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box6">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn6">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box6">
+            <h3>REQUIN</h3>
+            <p>requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn6">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box7">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn7">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box8">
+            <h3>REQUIN</h3>
+            <p class="resume"> requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn8">Learn more</button>
+        </div>
+ 
+        <div class="box" id="box9">
+            <h3>REQUIN</h3>
+            <p class="resume">requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin requin
+                requin requin requin requin requin requin requin...
+            </p>
+            <button class="btn_more ring" id="btn9">Learn more</button>
+        </div>
+        <script>
+          fetch("http://10.18.207.148:3000/personnes")
+            .then(res => res.json())
+            .then(data => {
+              const boxes = document.querySelectorAll(".box");
+              boxes.forEach((box, index) => {
+                if (index < data.length) { 
+                  const personne = data[index];
 
-  <main>
-    <!-- 9 boîtes vides pour les données -->
-    <div class="box" id="box1">
-      <h3></h3>
-      <p class="resume"></p>
-      <button class="btn_more ring" id="btn1">Learn more</button>
-    </div>
+                  box.querySelector("h3").textContent = `${personne.Nom} ${personne.Prénom}`;
+                  box.querySelector("p").textContent = `ID: ${personne.id}`;
+                  box.querySelector("p").textContent += ` Téléphone : ${personne.Téléphone}`;
+                }
+              });
+            })
+            .catch(err => console.error("Erreur :", err));
+        </script>
 
-    <div class="box" id="box2">
-      <h3></h3>
-      <p class="resume"></p>
-      <button class="btn_more ring" id="btn2">Learn more</button>
-    </div>
-
-    <div class="box" id="box3">
-      <h3></h3>
-      <p class="resume"></p>
-      <button class="btn_more ring" id="btn3">Learn more</button>
-    </div>
-
-    <div class="box" id="box4">
-      <h3></h3>
-      <p class="resume"></p>
-      <button class="btn_more ring" id="btn4">Learn more</button>
-    </div>
-
-    <div class="box" id="box5">
-      <h3></h3>
-      <p class="resume"></p>
-      <button class="btn_more ring" id="btn5">Learn more</button>
-    </div>
-
-    <div class="box" id="box6">
-      <h3></h3>
-      <p class="resume"></p>
-      <button class="btn_more ring" id="btn6">Learn more</button>
-    </div>
-
-    <div class="box" id="box7">
-      <h3></h3>
-      <p class="resume"></p>
-      <button class="btn_more ring" id="btn7">Learn more</button>
-    </div>
-
-    <div class="box" id="box8">
-      <h3></h3>
-      <p class="resume"></p>
-      <button class="btn_more ring" id="btn8">Learn more</button>
-    </div>
-
-    <div class="box" id="box9">
-      <h3></h3>
-      <p class="resume"></p>
-      <button class="btn_more ring" id="btn9">Learn more</button>
-    </div>
-
-    <script>
-      fetch("http://10.18.207.148:3000/personnes")
-        .then(res => res.json())
-        .then(data => {
-          const boxes = document.querySelectorAll(".box");
-          boxes.forEach((box, index) => {
-            if (index < data.length) {
-              const personne = data[index];
-              const nom = personne["Nom"] || "";
-              const prenom = personne["Prénom"] || "";
-              const id = personne["id"] || "";
-              const tel = personne["Téléphone"] || "";
-
-              box.querySelector("h3").textContent = `${nom} ${prenom}`;
-              box.querySelector(".resume").textContent = `ID : ${id} | Téléphone : ${tel}`;
-            }
-          });
-        })
-        .catch(err => console.error("Erreur :", err));
-    </script>
-  </main>
-
-  <footer>
-    <a href="#">Nos réseaux</a>
-    <a href="#">Nous contacter</a>
-    <a href="#">À propos</a>
-  </footer>
+    </main>
+    <footer>
+        <a href="">Nos réseaux</a>
+        <a href="">Nous Contacter</a>
+        <a href="">A propos</a>
+    </footer>
+    <script src="script.js"></script>
 </body>
+ 
 </html>
